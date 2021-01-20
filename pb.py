@@ -13,8 +13,8 @@ with open("pb.txt", "r") as file:
     for i in file:
         payload = '{\"couponno\":\"'+i+'"}'
         
-while True:
-    conn.request("POST", "/Coupon/Register", payload, headers)
-    res = conn.getresponse()
-    data = res.read()
-    print(data.decode("utf-8"))
+    while True:
+        conn.request("POST", "/Coupon/Register", payload, headers)
+        res = conn.getresponse()
+        data = res.read()
+        print(data.decode("utf-8"))
