@@ -11,9 +11,7 @@ headers = {
 }
 with open("pb.txt", "r") as file:
     for i in file:
-        payload = '{\"couponno\":\"'+i+'"}'
-        
-    while True:
+        payload = '{"couponno":"%s"}'%(i)
         conn.request("POST", "/Coupon/Register", payload, headers)
         res = conn.getresponse()
         data = res.read()
